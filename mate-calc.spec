@@ -1,15 +1,16 @@
 Summary:	MATE Desktop calculator
 Name:		mate-calc
-Version:	1.5.1
+Version:	1.5.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	6a0082fcccc4fbc3e2bf8631e9131447
+# Source0-md5:	7ad3813ecee2a67ad05702f5f176b05e
 URL:		http://mate-desktop.org/
 BuildRequires:	bison
 BuildRequires:	desktop-file-utils
 BuildRequires:	flex
+BuildRequires:	glib2-devel >= 1:2.30
 BuildRequires:	gtk+2-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	mate-common
@@ -29,9 +30,9 @@ arithmetic to give a high degree of accuracy.
 %build
 NOCONFIGURE=1 ./autogen.sh
 %configure \
+	--disable-silent-rules \
 	--disable-schemas-compile
-%{__make} \
-	V=1
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
