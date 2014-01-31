@@ -1,16 +1,16 @@
 #
 # Conditional build:
 %bcond_with	gtk3	# use GTK+ 3.x instead of 2.x
-#
+
 Summary:	MATE Desktop calculator
 Summary(pl.UTF-8):	Kalkulator dla środowiska MATE Desktop
 Name:		mate-calc
-Version:	1.6.0
+Version:	1.6.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	4672e85b045e5ace0a7e70fd0b8eb384
+# Source0-md5:	63323485ecf61a9d6290d9103786b56f
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.7
