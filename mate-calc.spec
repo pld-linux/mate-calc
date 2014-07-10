@@ -12,8 +12,8 @@ Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
 # Source0-md5:	8a22d9a65599163fa94d240fab5c15f2
 URL:		http://mate-desktop.org/
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1:1.7
+BuildRequires:	autoconf >= 2.62
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
 BuildRequires:	desktop-file-utils
 BuildRequires:	flex
@@ -25,6 +25,7 @@ BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	mate-common
 BuildRequires:	pkgconfig
+BuildRequires:	yelp-tools
 Requires:	glib2 >= 1:2.30
 %{!?with_gtk3:Requires:	gtk+2 >= 2:2.18.0}
 %{?with_gtk3:Requires:	gtk+3 >= 3.0.0}
@@ -70,9 +71,7 @@ desktop-file-install \
 	--dir=$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_desktopdir}/*.desktop
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
-
-%find_lang %{name} --with-mate --with-omf
+%find_lang %{name} --with-mate
 
 %clean
 rm -rf $RPM_BUILD_ROOT
