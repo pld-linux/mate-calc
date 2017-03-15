@@ -1,16 +1,12 @@
-#
-# Conditional build:
-%bcond_with	gtk3	# use GTK+ 3.x instead of 2.x
-
 Summary:	MATE Desktop calculator
 Summary(pl.UTF-8):	Kalkulator dla środowiska MATE Desktop
 Name:		mate-calc
-Version:	1.8.0
-Release:	2
+Version:	1.18.0
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.8/%{name}-%{version}.tar.xz
-# Source0-md5:	8a22d9a65599163fa94d240fab5c15f2
+Source0:	http://pub.mate-desktop.org/releases/1.18/%{name}-%{version}.tar.xz
+# Source0-md5:	552731cfcb655e4871eb407820962e16
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.9
@@ -18,8 +14,7 @@ BuildRequires:	bison
 BuildRequires:	desktop-file-utils
 BuildRequires:	flex
 BuildRequires:	glib2-devel >= 1:2.30
-%{!?with_gtk3:BuildRequires:	gtk+2-devel >= 2:2.18.0}
-%{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0.0}
+BuildRequires:	gtk+3-devel >= 3.14
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	libxml2-devel >= 2.0
@@ -27,8 +22,7 @@ BuildRequires:	mate-common
 BuildRequires:	pkgconfig
 BuildRequires:	yelp-tools
 Requires:	glib2 >= 1:2.30
-%{!?with_gtk3:Requires:	gtk+2 >= 2:2.18.0}
-%{?with_gtk3:Requires:	gtk+3 >= 3.0.0}
+Requires:	gtk+3 >= 3.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -55,8 +49,7 @@ mate-calc jest odgałęzieniem programu gnome-calc.
 %{__automake}
 %configure \
 	--disable-schemas-compile \
-	--disable-silent-rules \
-	%{?with_gtk3:--with-gtk=3.0}
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -90,6 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/mate-calculator
 %{_mandir}/man1/mate-calc.1*
 %{_mandir}/man1/mate-calc-cmd.1*
+%{_datadir}/appdata/mate-calc.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.mate.calc.gschema.xml
 %{_datadir}/mate-calc
 %{_desktopdir}/mate-calc.desktop
