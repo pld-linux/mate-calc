@@ -13,7 +13,7 @@ BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
 BuildRequires:	desktop-file-utils
 BuildRequires:	flex
-BuildRequires:	glib2-devel >= 1:2.30
+BuildRequires:	glib2-devel >= 1:2.31
 BuildRequires:	gtk+3-devel >= 3.14
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool >= 1:1.4.3
@@ -21,7 +21,7 @@ BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	mate-common
 BuildRequires:	pkgconfig
 BuildRequires:	yelp-tools
-Requires:	glib2 >= 1:2.30
+Requires:	glib2 >= 1:2.31
 Requires:	gtk+3 >= 3.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
