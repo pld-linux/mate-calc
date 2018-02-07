@@ -1,28 +1,28 @@
 Summary:	MATE Desktop calculator
 Summary(pl.UTF-8):	Kalkulator dla środowiska MATE Desktop
 Name:		mate-calc
-Version:	1.18.1
+Version:	1.20.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.18/%{name}-%{version}.tar.xz
-# Source0-md5:	055e3d079a4c91716f3249bfc98106d4
+Source0:	http://pub.mate-desktop.org/releases/1.20/%{name}-%{version}.tar.xz
+# Source0-md5:	09e88251b9d954410b4acfcad116e560
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
 BuildRequires:	desktop-file-utils
 BuildRequires:	flex
-BuildRequires:	glib2-devel >= 1:2.31
-BuildRequires:	gtk+3-devel >= 3.14
+BuildRequires:	glib2-devel >= 1:2.50.0
+BuildRequires:	gtk+3-devel >= 3.22
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	mate-common
 BuildRequires:	pkgconfig
 BuildRequires:	yelp-tools
-Requires:	glib2 >= 1:2.31
-Requires:	gtk+3 >= 3.14
+Requires:	glib2 >= 1:2.50.0
+Requires:	gtk+3 >= 3.22
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -63,6 +63,8 @@ desktop-file-install \
 	--delete-original \
 	--dir=$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_desktopdir}/*.desktop
+
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,ku_IQ,pms}
 
 %find_lang %{name} --with-mate
 
