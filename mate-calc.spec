@@ -1,12 +1,12 @@
 Summary:	MATE Desktop calculator
 Summary(pl.UTF-8):	Kalkulator dla środowiska MATE Desktop
 Name:		mate-calc
-Version:	1.20.0
+Version:	1.20.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.20/%{name}-%{version}.tar.xz
-# Source0-md5:	09e88251b9d954410b4acfcad116e560
+# Source0-md5:	2cebb4ccbedf1db9321b3013cf578f63
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.9
