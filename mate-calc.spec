@@ -1,12 +1,12 @@
 Summary:	MATE Desktop calculator
 Summary(pl.UTF-8):	Kalkulator dla środowiska MATE Desktop
 Name:		mate-calc
-Version:	1.20.1
+Version:	1.20.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.20/%{name}-%{version}.tar.xz
-# Source0-md5:	2cebb4ccbedf1db9321b3013cf578f63
+# Source0-md5:	f4788a4efe253cfa8bc5a6b395d54a9c
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.9
@@ -64,7 +64,7 @@ desktop-file-install \
 	--dir=$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_desktopdir}/*.desktop
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,ku_IQ,pms}
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{es_ES,frp,ku_IQ,pms}
 
 %find_lang %{name} --with-mate
 
