@@ -1,21 +1,21 @@
 Summary:	MATE Desktop calculator
 Summary(pl.UTF-8):	Kalkulator dla środowiska MATE Desktop
 Name:		mate-calc
-Version:	1.22.2
+Version:	1.24.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.22/%{name}-%{version}.tar.xz
-# Source0-md5:	0c6cc19ca7bbbab8ffac23206250ccfd
+Source0:	http://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
+# Source0-md5:	63655da67a5a3ecbde52da7f1b24eec0
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
 BuildRequires:	desktop-file-utils
 BuildRequires:	flex
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	gtk+3-devel >= 3.22
-BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	mate-common
@@ -41,7 +41,6 @@ mate-calc jest odgałęzieniem programu gnome-calc.
 %setup -q
 
 %build
-%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -88,5 +87,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/mate-calc-cmd.1*
 %{_datadir}/metainfo/mate-calc.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.mate.calc.gschema.xml
-%{_datadir}/mate-calc
 %{_desktopdir}/mate-calc.desktop
