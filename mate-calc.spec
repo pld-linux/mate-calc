@@ -1,12 +1,12 @@
 Summary:	MATE Desktop calculator
 Summary(pl.UTF-8):	Kalkulator dla środowiska MATE Desktop
 Name:		mate-calc
-Version:	1.24.2
+Version:	1.26.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	https://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
-# Source0-md5:	657cd908c5b3db6a83987cc8c623bff4
+Source0:	https://pub.mate-desktop.org/releases/1.26/%{name}-%{version}.tar.xz
+# Source0-md5:	2d9239cbfd1819300f4b595155ffe912
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.9
@@ -16,15 +16,18 @@ BuildRequires:	flex
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	gtk+3-devel >= 3.22
+BuildRequires:	libmpc-devel
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	mate-common
+BuildRequires:	mpfr-devel >= 4.0.2
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	glib2 >= 1:2.50.0
 Requires:	gtk+3 >= 3.22
+Requires:	mpfr >= 4.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -81,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README.md
 %attr(755,root,root) %{_bindir}/mate-calc
 %attr(755,root,root) %{_bindir}/mate-calc-cmd
 %attr(755,root,root) %{_bindir}/mate-calculator
