@@ -7,7 +7,7 @@ License:	GPL v2+
 Group:		X11/Applications
 Source0:	https://pub.mate-desktop.org/releases/1.26/%{name}-%{version}.tar.xz
 # Source0-md5:	2d9239cbfd1819300f4b595155ffe912
-URL:		http://mate-desktop.org/
+URL:		https://wiki.mate-desktop.org/mate-desktop/applications/mate-calc/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
@@ -22,6 +22,7 @@ BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	mate-common
 BuildRequires:	mpfr-devel >= 4.0.2
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.592
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	yelp-tools
