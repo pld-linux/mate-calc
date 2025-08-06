@@ -8,8 +8,6 @@ Group:		X11/Applications
 Source0:	https://pub.mate-desktop.org/releases/1.28/%{name}-%{version}.tar.xz
 # Source0-md5:	3492897f5c92b556df8ee9715db6db48
 URL:		https://wiki.mate-desktop.org/mate-desktop/applications/mate-calc/
-BuildRequires:	autoconf >= 2.62
-BuildRequires:	automake >= 1:1.9
 BuildRequires:	bison
 BuildRequires:	desktop-file-utils
 BuildRequires:	flex
@@ -17,7 +15,6 @@ BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	gtk+3-devel >= 3.22
 BuildRequires:	libmpc-devel
-BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	mate-common
 BuildRequires:	mpfr-devel >= 4.0.2
@@ -47,11 +44,6 @@ mate-calc jest odgałęzieniem programu gnome-calc.
 %setup -q
 
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
 %configure \
 	--disable-schemas-compile \
 	--disable-silent-rules
